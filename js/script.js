@@ -21,18 +21,23 @@ createApp({
 
     mounted() {
 
+      // inserito ciclo for fuori per far generare 10 email diverse
+      for(let i = 0; i < 10; i++) {
+        
       axios.get("https://flynn.boolean.careers/exercises/api/random/mail").then((result) => {
 
           // console.log(result)
 
           // console.log(response.data.response)
-          for(let i = 0; i < 10; i++) {
+          // ciclo for per stampare 10 email in pagina
+
           const email = result.data.response;
           this.emails.push(email);
 
           console.log(this.emails)
-          }
-      });
+
+          })
+      };
       
     }
 }).mount('#app');
