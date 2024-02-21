@@ -29,8 +29,11 @@
             </div>
         </div>
         <div class="container-fluid d-flex flex-column align-items-center">
-            
-    
+            <ul v-if="emails.length >= 10">
+                <li v-for="email in emails">
+                    {{ email }}
+                </li>
+            </ul>
         </div>   
         
     </div>     

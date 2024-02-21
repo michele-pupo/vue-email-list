@@ -14,15 +14,24 @@ createApp({
     data() {
         return {
 
-            
+            emails:[]
 
         }
     },
 
     mounted() {
 
-      axios.get("https://flynn.boolean.careers/exercises/api/random/mail").then((response) => {
+      axios.get("https://flynn.boolean.careers/exercises/api/random/mail").then((result) => {
 
+          // console.log(result)
+
+          // console.log(response.data.response)
+          for(let i = 0; i < 10; i++) {
+          const email = result.data.response;
+          this.emails.push(email);
+
+          console.log(this.emails)
+          }
       });
       
     }
