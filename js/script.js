@@ -19,7 +19,11 @@ createApp({
         }
     },
 
-    methods: {
+    mounted() {
+
+      axios.get("https://flynn.boolean.careers/exercises/api/random/mail").then((response) => {
+
+      });
       
     }
 }).mount('#app');
